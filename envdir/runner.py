@@ -27,9 +27,6 @@ class Runner(object):
         if not os.path.exists(real_path):
             # use 111 error code to adher to envdir's standard
             raise Response("envdir %r does not exist" % path, 111)
-        if not os.path.isdir(real_path):
-            # use 111 error code to adher to envdir's standard
-            raise Response("envdir %r not a directory" % path, 111)
         return real_path
 
     def open(self, path=None, stacklevel=1):
